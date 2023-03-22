@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/_imagem_ocor"
+        android:layout_width="72dp"
+        android:layout_height="match_parent"
+        app:srcCompat="@mipmap/trabalho100" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingLeft="5dp"
+            android:text="Nome"
+            android:textColor="?attr/actionModeSplitBackground"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvqtdtv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:text="Retirada:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvdataretirada"
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:paddingLeft="5dp"
+                android:text="00/00/000"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txnumeroprod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="Nº Ocor.:"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/numero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingEnd="10dp"
+                android:text="nº"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Status"
+                android:textColor="@color/green_dark"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

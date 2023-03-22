@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="0dp"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgjogo"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:padding="5dp"
+                        android:src="@mipmap/chip"
+                        app:civ_border_color="@android:color/transparent"
+                        app:civ_border_width="3dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgfhoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|right"
+                        android:background="@drawable/round_button"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="LoadPhoto"
+                        android:padding="5dp"
+                        android:src="@android:drawable/ic_menu_camera"
+                        app:civ_border_color="@android:color/transparent"
+                        app:civ_border_width="3dp" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_span="3"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:padding="18dip"
+                    android:text="NOVO JOGO"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:shrinkColumns="*"
+                android:stretchColumns="*">
+                <!-- Linha 1 com uma coluna-->
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                </TableRow>
+                <!-- Linha 2 com 2 colunas -->
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tvNocli"
+                        android:layout_width="88dp"
+                        android:layout_height="50dp"
+
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Jogo Nº"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewNumJogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow android:layout_width="fill_parent">
+
+
+                    <TextView
+                        android:id="@+id/lnomecli"
+
+                        android:layout_width="78dp"
+                        android:text="Descrição:"
+                        android:textStyle="bold" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/namejogo"
+                        android:layout_width="348dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="false"
+                        android:layout_marginTop="0dp"
+                        android:imeOptions="actionNext"
+                        android:longClickable="false"
+                        android:singleLine="true">
+
+                    </AutoCompleteTextView>
+
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:shrinkColumns="*"
+                android:stretchColumns="*">
+
+                <TableRow>
+
+
+                    <TextView
+                        android:id="@+id/ldataprev"
+                        android:layout_width="1dp"
+                        android:layout_span="1"
+                        android:text="Data :"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/editTextDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_span="6"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <requestFocus />
+
+                    <ImageButton
+                        android:id="@+id/btn_date"
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button"
+                        android:focusableInTouchMode="false"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="onClickDATA"
+                        app:srcCompat="@mipmap/calendar32" />
+
+                </TableRow>
+
+
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/lfone"
+                            android:layout_width="71dp"
+                            android:layout_height="wrap_content"
+                            android:text="Entrada.:"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edvalorentrada"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="numberDecimal"
+                            android:nextFocusDown="@+id/edqtdentrada" />
+
+                        <TextView
+                            android:id="@+id/lfone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fichas.:"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edqtdentrada"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="numberDecimal"
+                            android:nextFocusDown="@+id/edvalorrebuy"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/lfone"
+                            android:layout_width="71dp"
+                            android:layout_height="wrap_content"
+                            android:text="Rebuy.:"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edvalorrebuy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="numberDecimal"
+                            android:nextFocusDown="@+id/edqtdrebuy" />
+
+                        <TextView
+                            android:id="@+id/lfone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fichas.:"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edqtdrebuy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="numberDecimal"
+                            android:nextFocusDown="@+id/edvaloraddon" />
+
+                    </LinearLayout>
+
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/lfone"
+                            android:layout_width="71dp"
+                            android:layout_height="wrap_content"
+                            android:text="Addon.:"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edvaloraddon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="numberDecimal"
+                            android:nextFocusDown="@+id/edqtdaddon" />
+
+                        <TextView
+                            android:id="@+id/lfone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fichas.:"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edqtdaddon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="numberDecimal" />
+
+                    </LinearLayout>
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/LayoutButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="5dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btnSalvarjogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custombutton"
+                android:elevation="1dp"
+                android:padding="5dp"
+                android:text="SALVAR" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btnCancelarnjogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custombutton_cancel"
+                android:elevation="1dp"
+                android:text="Cancelar" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

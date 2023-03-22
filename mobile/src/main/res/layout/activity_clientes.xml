@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Produtos">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="inherit"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ddd">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="396dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center_horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="199dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="0dp"
+                                android:gravity="center|center_horizontal"
+                                android:text="Cadastro de Professores"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/imgaddnewcli"
+                            android:layout_width="122dp"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:srcCompat="@mipmap/credenciais" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="159dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txbuscacli"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:gravity="center"
+                                android:text="Buscar Professor"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                        <SearchView
+                            android:id="@+id/searchcli"
+                            style="@android:style/Widget.Material.SearchView"
+                            android:layout_width="match_parent"
+                            android:layout_height="75dp">
+
+                        </SearchView>
+
+                        <CheckBox
+                            android:id="@+id/chbinativo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Inativos" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="300dp">
+
+                            <TextView
+                                android:id="@+id/texlistcli"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="16dp"
+                                android:gravity="center"
+                                android:text="Professores"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/listviwercli"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignBaseline="@id/texlistcli"
+                                android:padding="5dp" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

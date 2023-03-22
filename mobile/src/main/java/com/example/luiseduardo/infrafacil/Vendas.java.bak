@@ -1,0 +1,93 @@
+package com.example.luiseduardo.infrafacil;
+
+public class Vendas {
+
+    private String Idocor;
+    private String Idvenda;
+    private String Name;
+    private String Qtd;
+    private String Valor;
+    private int Photo;
+    private String Idprod;
+    private String Idforne;
+
+    public String getIdocor() {
+        return Idocor;
+    }
+
+    public void setIdocor(String idocor) {
+        Idocor = idocor;
+    }
+
+    public void setIdvenda(String idvenda) {
+        Idvenda = idvenda;
+    }
+
+    public String getIdvenda() {
+        return Idvenda;
+    }
+
+    public void setIdprod(String idprod) {
+        Idprod = idprod;
+    }
+
+    public void setIdforne(String idforne) {
+        Idforne = idforne;
+    }
+
+    public String getIdprod() {
+        return Idprod;
+    }
+
+    public String getIdforne() {
+        return Idforne;
+    }
+
+    public void setQtd(String qtd) {
+        Qtd = qtd;
+    }
+
+    public void setValor(String valor) {
+        Valor = valor;
+    }
+
+    public String getQtd() {
+        return Qtd;
+    }
+
+    public String getValor() {
+        return Valor;
+    }
+
+    public Vendas() {
+
+    }
+
+    public Vendas(String idocor,String idvenda,String name, String qtd, String valor,String idforne,String idprod ) {
+        Idocor = idocor;
+        Idvenda = idvenda;
+        Name = name;
+        Qtd = qtd;
+        Valor = valor;
+        Idforne = idforne;
+        Idprod = idprod;
+
+        //Photo = photo;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    //public int getPhoto() {
+    //    return Photo;
+    //}
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+//    public void setPhoto(int photo) {
+//        Photo = photo;
+//    }
+}

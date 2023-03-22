@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1028163508564",
+    "firebase_url": "https://infra-facil-540ed.firebaseio.com",
+    "project_id": "infra-facil-540ed",
+    "storage_bucket": "infra-facil-540ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028163508564:android:5f6df84a3219e68e",
+        "android_client_info": {
+          "package_name": "com.example.luiseduardo.infrafacil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028163508564-on6iv96a7d9s88pheessk26gdnruj0e2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiayucYdgZhj78mHS1DJniNjPFhP7IW3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028163508564-on6iv96a7d9s88pheessk26gdnruj0e2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

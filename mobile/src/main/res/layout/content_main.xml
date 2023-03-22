@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.luiseduardo.infrafacil.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <LinearLayout
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="200dp"
+        android:layoutDirection="inherit"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ddd">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/financas"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center_horizontal"
+                        android:onClick="onClickItem"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="16dp"
+                                android:text="Tarefas"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imgaddnewcli"
+                                android:layout_width="105dp"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@mipmap/task64" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/clientes"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center_horizontal"
+                        android:onClick="onClickItem"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="16dp"
+                                android:text="Professores"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                            <ImageView
+                                android:id="@+id/imgstatistacas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@mipmap/identidade128" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/statisticas"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center_horizontal"
+                        android:onClick="onClickItem"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/imgstatistacass"
+                                android:layout_width="157dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignBaseline="@id/txstatisticas"
+                                app:srcCompat="@mipmap/statics" />
+
+                            <TextView
+                                android:id="@+id/txstatisticas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="Relatórios"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/listarchamados"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:clickable="true"
+                        android:gravity="center_horizontal"
+                        android:onClick="onClickItem"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            android:clickable="true"
+
+                            <ImageView
+                                android:id="@+id/imgchamados"
+                                android:layout_width="100dp"
+                                android:layout_height="200dp"
+                                android:layout_alignBaseline="@id/txchamados"
+                                app:srcCompat="@drawable/checklist" />
+
+                            <TextView
+                                android:id="@+id/txchamados"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="Controle"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/produtos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center_horizontal"
+                        android:onClick="onClickItem"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txprodutos"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:gravity="center"
+                                android:text="Itens"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imgprodutos"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBaseline="@id/txprodutos"
+                                app:srcCompat="@mipmap/produtos" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

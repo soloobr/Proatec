@@ -1,0 +1,252 @@
+package com.example.luiseduardo.infrafacil;
+
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
+
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static android.content.ContentValues.TAG;
+
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class PecaFragment   extends Fragment {
+
+    static View v;
+    public static RecyclerView myrecyclerview;
+    public static List<Vendas> lsvendas;
+    public static ImageButton btnadd;
+
+    public static ArrayList itens = null;
+    private static String IDORDEM = Status_Ordem.IDORDEM;
+
+    JSONParser jsonParser = new JSONParser();
+    private static String urlvenda = "http://futsexta.16mb.com/Poker/Infra_Get_produtosvendido.php";
+
+    public static String idvenda, nome, valorvenda, qtdprodvend;
+    public static String idprod, idforne,  descri, idocor;
+    public static int Somavebdas ;
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Activity a;
+        // Log.i ("Activit", a);
+        Log.i ("Activit", context.getClass().getName());
+        if (context instanceof Activity){
+            a=(Activity) context;
+        }
+
+    }
+
+    public PecaFragment() {
+        // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+
+        //if (lsvendas != null && lsvendas.isEmpty()) {
+       // }else {
+            lsvendas = new ArrayList<>();
+        //}
+        new GetDadosVenda().execute();
+    }
+
+    private void createExampleList() {    }
+
+    public  void buildReclierView() {
+
+        myrecyclerview = (RecyclerView) v.findViewById(R.id.recycleitemendas);
+        VendasAdapter vendasAdapter  = new VendasAdapter(getContext(),lsvendas);
+        myrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        myrecyclerview.setAdapter(vendasAdapter);
+    }
+
+    public void insertItem(int position){
+        lsvendas.add(new Vendas(idocor,idvenda, nome,  qtdprodvend , valorvenda,idforne,idprod));
+        VendasAdapter.notifyItemChanged();
+    }
+    public void removetItem(int position){
+        lsvendas.remove(position);
+        VendasAdapter.notifyItemChanged();
+    }
+
+
+    @SuppressLint("WrongViewCast")
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+    v =  inflater.inflate(R.layout.fragment_peca,container,false);
+    myrecyclerview = (RecyclerView) v.findViewById(R.id.recycleitemendas);
+    VendasAdapter vendasAdapter  = new VendasAdapter(getContext(),lsvendas);
+    myrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+    myrecyclerview.setAdapter(vendasAdapter);
+
+    btnadd = (ImageButton) v.findViewById(R.id.itemadd);
+    configureImageButton();
+
+
+    return v;
+
+    }
+
+    private class GetDadosVenda extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Void... arg0) {
+
+            IDORDEM = Status_Ordem.IDORDEM;
+            String NUM_Ocor = IDORDEM;
+            Log.e("Profile IDOCOR: ", IDORDEM);
+
+            List params = new ArrayList();
+            params.add(new BasicNameValuePair("IDOcor",NUM_Ocor));
+
+            JSONObject jsonStr = jsonParser.makeHttpRequest(urlvenda,"POST",
+                    params);
+
+            Log.i("Profile JSON: ", jsonStr.toString());
+
+            if (jsonStr != null) {
+                try {
+                    Log.e(TAG, "Não nulo");
+                    JSONObject jsonObj = new JSONObject(String.valueOf(jsonStr));
+
+                    // Getting JSON Array node
+                    JSONArray contacts = jsonObj.getJSONArray("produtos");
+                    Log.e(TAG, "Count : " + contacts.length());
+
+                    if (itens == null){
+                        itens = new ArrayList<ItemListViewVendas>();
+                    }
+                    // looping through All Contacts
+                    //newItemlist.clear();
+
+/*                    if (lsvendas != null && lsvendas.isEmpty()) {
+                        lsvendas = new ArrayList<>();
+                    }else {
+
+                    }*/
+
+
+                     Somavebdas = 0;
+                    for (int i = 0; i < contacts.length(); i++) {
+                        JSONObject c = contacts.getJSONObject(i);
+
+                        String id = c.getString("idocorrencia");
+                        String idvend = c.getString("idvenda");
+                        String name = c.getString("descricao");
+                        String valor = c.getString("volorvendido");
+                        String qtd = c.getString("quantidadeproduto");
+                        String idpro = c.getString("idproduto");
+                        String idfor = c.getString("idfornecedor");
+
+                        idvenda = idvend;
+                        nome = name;
+                        valorvenda = valor;
+                        qtdprodvend = qtd;
+                        idprod = idpro;
+                        idforne = idfor;
+                        idocor = id;
+
+                        lsvendas.add(new Vendas(idocor,idvenda, nome, qtdprodvend,valorvenda,idforne,idprod));
+
+                        Somavebdas = Somavebdas + (int)Double.parseDouble(valor);
+
+                        Log.e(TAG, String.valueOf(lsvendas));
+
+                    }
+                } catch (final JSONException e) {
+                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+                }
+            } else {
+                Log.e(TAG, "Couldn't get json from server.");
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+
+           // VendasAdapter.notifyItemChanged();
+
+            myrecyclerview = (RecyclerView) v.findViewById(R.id.recycleitemendas);
+            VendasAdapter vendasAdapter  = new VendasAdapter(getContext(),lsvendas);
+            myrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+            myrecyclerview.setAdapter(vendasAdapter);
+
+            // editValorTotal.setText(res);
+            Status_Ordem.editValorpca.setText(String.valueOf(Somavebdas));
+            Somavebdas=0;
+        }
+    }
+
+    private void configureImageButton() {
+        // TODO Auto-generated method stub
+        ImageButton btn = (ImageButton) v.findViewById(R.id.itemadd);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Produtos.class);
+                startActivity(intent);
+                //Toast.makeText(getActivity(), "You Clicked the button!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+
+    }
+
+    public void onStart() {
+        super.onStart();
+        buildReclierView();
+
+        Log.e(TAG, "Iniciou");
+    }
+
+    public void onStop() {
+        super.onStop();
+        Log.e(TAG, "Fechou");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+}

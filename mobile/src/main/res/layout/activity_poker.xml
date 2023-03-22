@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ddd"
+        android:layoutDirection="inherit"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/tvvalortotaljogo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="Valores:"
+                    android:textColor="@color/green_dark" />
+
+                <TextView
+                    android:id="@+id/tvtotalgeral21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="Entr." />
+
+                <TextView
+                    android:id="@+id/tvvalorentrada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="R$ 00,00" />
+
+                <View
+                    android:id="@+id/divider31"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/lrebuy1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="Rebuy" />
+
+                <TextView
+                    android:id="@+id/tvvlrebuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="R$ 00,00" />
+
+                <View
+                    android:id="@+id/divider51"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/laddon1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="Addon" />
+
+                <TextView
+                    android:id="@+id/tvvladdon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="R$ 00,00" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Premiação:" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="71dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="188dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tV9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:paddingLeft="5dp"
+                                android:paddingEnd="5dp"
+                                android:text="1º - "
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/vlprimeiro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:paddingLeft="5dp"
+                                android:text="0"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:paddingLeft="5dp"
+                                android:paddingEnd="5dp"
+                                android:text="2º - "
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/vlsegundo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:paddingLeft="5dp"
+                                android:text="0"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/textView9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:paddingLeft="5dp"
+                                android:paddingEnd="5dp"
+                                android:text="3º - "
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/vlterceiro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:paddingLeft="5dp"
+                                android:text="0"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnewplayers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClickNewPlayer"
+                        android:text="New Player" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/tvtotalgeral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Total: " />
+
+                <TextView
+                    android:id="@+id/tvvalortotaljogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="Valor_Total"
+                    android:textColor="@color/green_dark" />
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/tqtdent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvtotalgeral2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="Entradas" />
+
+                <View
+                    android:id="@+id/divider4"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/tqtdrebuys"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lrebuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="Rebuys" />
+
+                <View
+                    android:id="@+id/divider5"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/tqtdaddon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/laddon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="Addon" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/tvdescrijogo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingTop="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="Jogo 05/05/2022"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvsemplayers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Jogo ainda não tem Players."
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/listviwerplayers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

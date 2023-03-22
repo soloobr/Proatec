@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="0dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lltopo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgNewCliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/businessregistration2358"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/TextView000"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_span="3"
+                    android:background="@android:color/white"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:padding="18dip"
+                    android:text="Cadastro de Professores"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@android:color/holo_green_light" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvNocli"
+                    android:layout_width="196dp"
+                    android:layout_height="50dp"
+
+                    android:background="@android:color/background_light"
+                    android:gravity="center"
+                    android:text="Nº Professor"
+
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewNumcadCli"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|center_horizontal"
+
+                    android:text="000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        app:cardCornerRadius="8dp">
+        android:id="@+id/llquadrantecentro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:id="@+id/llnome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lnomecli"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:gravity="fill_vertical"
+                    android:text="Nome:" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoeditNome"
+                    android:layout_width="283dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="2dp"
+                    android:dropDownWidth="300dp" />
+
+                <Button
+                    android:id="@+id/clear"
+                    android:layout_width="26dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@drawable/refhes20"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="clear" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llfone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lfone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="Fone:" />
+
+                <EditText
+                    android:id="@+id/editPhonecli"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="phone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="Email:" />
+
+                <EditText
+                    android:id="@+id/editEmailcadcli"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textWebEmailAddress" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llativo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/switchstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:clickable="true"
+                    android:padding="5dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="20dp"
+                    android:text="Professor Ativo"
+                    android:textOff="OFF"
+                    android:textOn="ON" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        app:cardCornerRadius="8dp">
+        android:id="@+id/llquadrantecentro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lllist"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/historicoocrocli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="10dp"
+                    android:text="Historico de Ocorrências:" />
+
+                <TextView
+                    android:id="@+id/txconthistorico"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:text="00" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lvhistoricocli"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/llbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
+
+        <Button
+            android:id="@+id/btnSalvar"
+            android:layout_width="193dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custombutton"
+            android:elevation="1dp"
+            android:onClick="onClick"
+            android:text="SALVAR" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custombutton_cancel"
+            android:elevation="1dp"
+            android:onClick="onClick"
+            android:text="Cancelar" />
+
+    </LinearLayout>
+</LinearLayout>

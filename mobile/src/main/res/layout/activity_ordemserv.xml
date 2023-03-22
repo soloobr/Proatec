@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lordem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/buttonsl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:id="@+id/tablebuttons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btntodos"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="147dp"
+                    android:layout_height="62dp"
+                    android:layout_weight="1"
+                    android:onClick="onClickOrdem"
+                    android:text="Todas"
+                    android:textColorLink="#3F51B5" />
+
+                <Button
+                    android:id="@+id/btnAberto"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_weight="2"
+                    android:editable="false"
+                    android:onClick="onClickOrdem"
+                    android:text="Ordens em Andamento"
+                    android:textColorLink="#8BC34A" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+    </LinearLayout>
+
+
+</LinearLayout>

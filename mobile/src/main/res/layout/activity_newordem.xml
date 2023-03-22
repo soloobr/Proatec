@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="0dp"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="675dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:paddingTop="10dp"
+                android:shrinkColumns="*"
+                android:stretchColumns="*">
+                <!-- Linha 1 com uma coluna-->
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgNewCliente"
+                        android:layout_width="81dp"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/information" />
+
+                    <TextView
+                        android:id="@+id/TextView000"
+                        android:layout_height="match_parent"
+                        android:layout_span="3"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:padding="18dip"
+                        android:text="NOVA OCORÊNCIA"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="@android:color/holo_green_light" />
+                </TableRow>
+                <!-- Linha 2 com 2 colunas -->
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tvNocli"
+                        android:layout_width="88dp"
+                        android:layout_height="50dp"
+
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Ocorencia Nº"
+                        android:textAppearance="@style/TextAppearance.Compat.Notification"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewNumCli"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="000"
+                        android:textAppearance="@style/TextAppearance.Compat.Notification"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TableRow android:layout_width="fill_parent">
+
+
+                    <TextView
+                        android:id="@+id/lnomecli"
+
+                        android:layout_width="53dp"
+                        android:text="Nome:"
+                        android:textAppearance="@style/TextAppearance.Compat.Notification" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoComplete"
+                        android:layout_width="348dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="false"
+                        android:layout_marginTop="0dp"
+                        android:imeOptions="actionNext"
+                        android:longClickable="false"
+                        android:singleLine="true">
+
+                        <requestFocus />
+                    </AutoCompleteTextView>
+
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/Tlaydescri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:shrinkColumns="*"
+                android:stretchColumns="*">
+
+
+                <!-- Linha 2 com 2 colunas -->
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:gravity="center_horizontal">
+
+                    <EditText
+                        android:id="@+id/editDescri"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:background="?attr/colorButtonNormal"
+                        android:gravity="top"
+                        android:hint="Descrição do Serv.:"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp" />
+
+                </TableRow>
+
+
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/TLayAddtar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp">
+
+                    <TextView
+                        android:id="@+id/ltarefa"
+
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:text="Adicionar Tarefa:"
+                        android:textAppearance="@style/TextAppearance.Compat.Notification" />
+
+                    <Spinner
+                        android:id="@+id/spinnertarefa"
+                        android:layout_width="237dp"
+                        android:layout_height="66dp" />
+
+                    <ImageButton
+                        android:id="@+id/btnaddtar"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClickAddtar"
+                        app:srcCompat="@android:drawable/ic_menu_upload_you_tube" />
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp">
+
+                    <TextView
+                        android:id="@+id/lfone"
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:text="Tec. Resp.:"
+                        android:textAppearance="@style/TextAppearance.Compat.Notification"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="39dp"/>
+
+                    <Spinner
+                        android:id="@+id/spinnertecnico"
+                        android:layout_width="0dp"
+                        android:layout_height="39dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/lfone"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:shrinkColumns="*"
+                android:stretchColumns="*">
+
+                <TableRow>
+
+
+                    <TextView
+                        android:id="@+id/ldataprev"
+                        android:layout_width="1dp"
+                        android:layout_span="1"
+                        android:text="Data Previsão:"
+                        android:textAppearance="@style/TextAppearance.Compat.Notification" />
+
+                    <EditText
+                        android:id="@+id/editEmailcli"
+                        android:layout_width="152dp"
+                        android:layout_span="2"
+                        android:layout_weight="0"
+                        android:focusable="false"
+                        android:imeOptions="actionNext"
+                        android:inputType="date" />
+
+                    <ImageButton
+                        android:id="@+id/btn_date"
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:onClick="onClick"
+                        app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+
+                </TableRow>
+
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:shrinkColumns="*"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:id="@+id/Tbutons"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/btnSalvar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custombutton"
+                    android:elevation="1dp"
+                    android:onClick="onClickSAVE"
+                    android:text="SALVAR" />
+
+                <Button
+                    android:id="@+id/btnCancelar"
+                    android:layout_width="50dp"
+                    android:background="@drawable/custombutton_cancel"
+                    android:elevation="1dp"
+                    android:onClick="onClickNEW"
+                    android:text="Cancelar" />
+
+            </TableRow>
+
+
+        </TableLayout>
+    </LinearLayout>
+
+</LinearLayout>

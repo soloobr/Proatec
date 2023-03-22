@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Proatec.iml" filepath="$PROJECT_DIR$/.idea/modules/Proatec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/Proatec.mobile.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/Proatec.mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/Proatec.mobile.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/Proatec.mobile.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/Proatec.mobile.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/Proatec.mobile.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/Proatec.mobile.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/Proatec.mobile.unitTest.iml" />
+    </modules>
+  </component>
+</project>
