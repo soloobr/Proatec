@@ -61,7 +61,7 @@
 
         <activity
             android:name="com.example.luiseduardo.infrafacil.MainActivity"
-            android:label="Proatec Control - DashBoard"
+            android:label="Proatec Control - DashBoardd"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="true">
             <intent-filter>
