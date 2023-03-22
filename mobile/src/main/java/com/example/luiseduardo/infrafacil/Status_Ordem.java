@@ -891,7 +891,7 @@ public class Status_Ordem extends AppCompatActivity implements AdapterView.OnIte
 
 
                 Nome = ((AutoCompleteTextView)findViewById(R.id.editNome)).getText().toString();
-                Descri_Servi = ((EditText) findViewById(R.id.editDescri)).getText().toString();
+                //Descri_Servi = ((EditText) findViewById(R.id.editDescri)).getText().toString();
                 //Tec_Resp = ((EditText) findViewById(R.id.editTecResp)).getText().toString();
                 Tec_Resp = ((Spinner) findViewById(R.id.spinnertecnicostts)).getSelectedItem().toString();
                 Data_Previ = ((EditText) findViewById(R.id.editEmailcli)).getText().toString();

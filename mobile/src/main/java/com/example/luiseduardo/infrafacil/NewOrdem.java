@@ -60,9 +60,9 @@ public class NewOrdem extends AppCompatActivity implements
 
 
         private static String GETINFO_URL = "http://futsexta.16mb.com/Poker/insert_OrdemMobile.php";
-        private static String GETINFO_USER = "http://futsexta.16mb.com/Poker/Get_UserMobile.php";
-        private static String urlCont = "http://futsexta.16mb.com/Poker/ordem_cont.php";
-        private static String urlfunc = "http://futsexta.16mb.com/Poker/Infra_Get_func.php";
+        private static String GETINFO_USER = "http://futsexta.16mb.com/Proatec/Infra_Get_clientes.php";
+        private static String urlCont = "http://futsexta.16mb.com/Proatec/ordem_cont.php";
+        private static String urlfunc = "http://futsexta.16mb.com/Proatec/Infra_Get_clientes.php";
 
 
 
@@ -96,46 +96,46 @@ public class NewOrdem extends AppCompatActivity implements
         String getuser;
         String nome ;
 
-        @SuppressLint("WrongViewCast")
+        @SuppressLint({"WrongViewCast", "SuspiciousIndentation"})
         @Override
         protected void onCreate (Bundle savedInstance){
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_newordem);
 
-        AutoCompleteTextView acTextView = (AutoCompleteTextView) findViewById(R.id.autoComplete);
-        acTextView.setAdapter(new SuggestionAdapter(this, acTextView.getText().toString()));
+        //AutoCompleteTextView acTextView = (AutoCompleteTextView) findViewById(R.id.autoComplete);
+        //acTextView.setAdapter(new SuggestionAdapter(this, acTextView.getText().toString()));
 
         //Spinner acTextView1 = (Spinner) findViewById(R.id.spinnertecnico);
         //acTextView1.setAdapter(new SuggestionAdapterTec(this, acTextView1.getText().toString()));
 
          getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        autoNome = (AutoCompleteTextView) findViewById(R.id.autoComplete);
-        editDesc = (EditText) findViewById(R.id.editDescri);
+        //autoNome = (AutoCompleteTextView) findViewById(R.id.autoComplete);
+        //editDesc = (EditText) findViewById(R.id.editDescri);
         autoTec = (Spinner) findViewById(R.id.spinnertecnico);
         autoTec.setOnItemSelectedListener(this);
 
-        editData = (EditText) findViewById(R.id.editEmailcli);
-        editDescri = (EditText) findViewById(R.id.editDescri);
+        //editData = (EditText) findViewById(R.id.editEmailcli);
+        //editDescri = (EditText) findViewById(R.id.editDescri);
 
         tx = (TextView) findViewById(R.id.textViewNumCli);
 
-        btnDatePicker = (ImageButton) findViewById (R.id.btn_date);
-        btnDatePicker.setOnClickListener(this);
-        btnaddtar = (ImageButton) findViewById(R.id.btnaddtar);
+        //btnDatePicker = (ImageButton) findViewById (R.id.btn_date);
+        //btnDatePicker.setOnClickListener(this);
+        //btnaddtar = (ImageButton) findViewById(R.id.btnaddtar);
 
-        spin = (Spinner) findViewById(R.id.spinnertarefa);
+        //spin = (Spinner) findViewById(R.id.spinnertarefa);
 
-        spin.setEnabled(true);
+        //spin.setEnabled(true);
 
-            ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,Itemtar);
-            aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //    ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,Itemtar);
+        //    aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-            newItemlist = new ArrayList<HashMap<String, String>>();
+          //  newItemlist = new ArrayList<HashMap<String, String>>();
 
 
-            spin.setAdapter(aa);
-            spin.setSelection(0);
+            //spin.setAdapter(aa);
+            //spin.setSelection(0);
 
             new NewOrdem.CountDados().execute();
             new NewOrdem.GetFunc().execute();
@@ -167,8 +167,8 @@ public class NewOrdem extends AppCompatActivity implements
     @SuppressLint("ResourceAsColor")
     public void onClickNEW(View v) {
 
-        AutoCompleteTextView usernameEditText = (AutoCompleteTextView) findViewById(R.id.autoComplete);
-        nome = usernameEditText.getText().toString();
+       // AutoCompleteTextView usernameEditText = (AutoCompleteTextView) findViewById(R.id.autoComplete);
+       // nome = usernameEditText.getText().toString();
 
 
         switch (v.getId()) {
@@ -205,8 +205,8 @@ public class NewOrdem extends AppCompatActivity implements
     @SuppressLint("ResourceAsColor")
     public void onClickSAVE(View v) {
 
-        AutoCompleteTextView usernameEditText = (AutoCompleteTextView) findViewById(R.id.autoComplete);
-        nome = usernameEditText.getText().toString();
+      //  AutoCompleteTextView usernameEditText = (AutoCompleteTextView) findViewById(R.id.autoComplete);
+      //  nome = usernameEditText.getText().toString();
 
 
 
@@ -283,17 +283,17 @@ public class NewOrdem extends AppCompatActivity implements
         protected String doInBackground(String... args) {
 
 
-            String nome = ((EditText) findViewById(R.id.autoComplete)).getText().toString();
+           // String nome = ((EditText) findViewById(R.id.autoComplete)).getText().toString();
 
 
 
             if (nome != null) {
-                Nome = ((AutoCompleteTextView)findViewById(R.id.autoComplete)).getText().toString();
-                Descri_Servi = ((EditText) findViewById(R.id.editDescri)).getText().toString();
+               // Nome = ((AutoCompleteTextView)findViewById(R.id.autoComplete)).getText().toString();
+              //  Descri_Servi = ((EditText) findViewById(R.id.editDescri)).getText().toString();
                 Tec_Resp = ((Spinner) findViewById(R.id.spinnertecnico)).getSelectedItem().toString();
-                Data_Previ = ((EditText) findViewById(R.id.editEmailcli)).getText().toString();
-                String date = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
-                Data_Local = date;
+                //Data_Previ = ((EditText) findViewById(R.id.editEmailcli)).getText().toString();
+                //String date = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+                //Data_Local = date;
             } else {
 
                 Log.d("Não", "Nome não preenchido");
@@ -369,10 +369,10 @@ public class NewOrdem extends AppCompatActivity implements
         protected String doInBackground(String... args) {
 
 
-            String nome = ((EditText) findViewById(R.id.autoComplete)).getText().toString();
+            //String nome = ((EditText) findViewById(R.id.autoComplete)).getText().toString();
 
             if (nome != null) {
-                Nome = ((AutoCompleteTextView)findViewById(R.id.autoComplete)).getText().toString();
+              //  Nome = ((AutoCompleteTextView)findViewById(R.id.autoComplete)).getText().toString();
 
             } else {
 
@@ -443,8 +443,8 @@ public class NewOrdem extends AppCompatActivity implements
 
                        // Toast.makeText(NewOrdem.this, "Abrir Cadastro", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(NewOrdem.this, Cadastro_Clientes.class);
-                        EditText editText = (EditText) findViewById(R.id.autoComplete);
-                         USERNAME = editText.getText().toString();
+                       // EditText editText = (EditText) findViewById(R.id.autoComplete);
+                       //  USERNAME = editText.getText().toString();
                         intent.putExtra("key", USERNAME);
                         startActivity(intent);
 
@@ -493,9 +493,9 @@ public class NewOrdem extends AppCompatActivity implements
         protected String  doInBackground(String... args) {
 
             List params = new ArrayList();
-            params.add(new BasicNameValuePair("NUM_Ocor","%%"));
+            params.add(new BasicNameValuePair("Nomecli","%%"));
 
-            JSONObject json = jsonParser.makeHttpRequest(urlfunc,"GET",
+            JSONObject json = jsonParser.makeHttpRequest(urlfunc,"POST",
                     params);
 
             Log.i("Profile JSON: ", json.toString());
@@ -503,14 +503,14 @@ public class NewOrdem extends AppCompatActivity implements
             if (json != null) {
                 try {
                     JSONObject parent = new JSONObject(String.valueOf(json));
-                    JSONArray eventDetails = parent.getJSONArray("funcionario");
+                    JSONArray eventDetails = parent.getJSONArray("clientes");
 
                     categories = new ArrayList<String>();
 
                     for (int i = 0; i < eventDetails.length(); i++)
                     {
                         object = eventDetails.getJSONObject(i);
-                        String tecresp = object.getString("nome");
+                        String tecresp = object.getString("Nome");
 
                         categories.add(tecresp);
 
