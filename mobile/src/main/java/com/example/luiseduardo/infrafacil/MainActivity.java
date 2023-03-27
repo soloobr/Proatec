@@ -76,7 +76,9 @@ public class MainActivity extends AppCompatActivity
     private static String urlCont = "http://futsexta.16mb.com/Poker/ordem_cont.php";
     private static String urlContcli = "http://futsexta.16mb.com/Poker/cliente_cont.php";
     String contador;
+    TextView NomeProatec;
     String contadorcli;
+
     public MainActivity() {
 
 
@@ -141,8 +143,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         OcorList = new ArrayList<>();
-        lv = findViewById(R.id.list);
-        lv.setOnItemClickListener(this);
+ //       lv = findViewById(R.id.list);
+//        lv.setOnItemClickListener(this);
 
 
 
@@ -180,6 +182,13 @@ public class MainActivity extends AppCompatActivity
                 getResources().getColor(android.R.color.holo_red_light)
         );
 
+
+        DadosLogin dadosLogin = DadosLoginSingleton.getInstance().getDadosLogin();
+        String nomeproatec = dadosLogin.getName();
+
+
+        NomeProatec = (TextView) findViewById(R.id.NomeProatec);
+        NomeProatec.setText(nomeproatec);
 
     }
 

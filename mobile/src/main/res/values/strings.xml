@@ -39,6 +39,12 @@
         <item>Dezembro</item>
     </array>
 
+    <string-array name="search_options">
+        <item>Todos</item>
+        <item>Opção 1</item>
+        <item>Opção 2</item>
+    </string-array>
+
     <string name="material_calendar_today_button">Hoje</string>
     <string name="material_calendar_positive_button">Escolher</string>
     <string name="material_calendar_negative_button">Cancelar</string>

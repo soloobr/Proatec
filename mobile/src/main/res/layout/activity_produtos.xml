@@ -43,7 +43,7 @@
                             android:layout_alignParentTop="true"
                             android:layout_marginTop="0dp"
                             android:gravity="center|center_horizontal"
-                            android:text="Cadastro de Produtos"
+                            android:text="Cadastro de Dispositivos"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -83,7 +83,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:gravity="center"
-                            android:text="Buscar Produto"
+                            android:text="Buscar Dispositivos"
                             android:textSize="30sp"
                             android:textStyle="bold" />
 
@@ -116,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:paddingTop="5dp"
-                        android:text="Produtos"
+                        android:text="Dispositivos:"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 

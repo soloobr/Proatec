@@ -9,6 +9,15 @@ public class Vendas {
     private String descricao;
     private int iconeRid;
 
+    private boolean selected;
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
     public String getIdvenda() {
         return idvenda;
     }

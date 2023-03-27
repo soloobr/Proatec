@@ -17,6 +17,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -36,6 +39,7 @@ import static android.content.ContentValues.TAG;
  */
 public class PecaFragment   extends Fragment {
 
+    private VendasAdapter vendasAdapter;
     static View v;
     public static RecyclerView myrecyclerview;
     public static List<Vendas> lsvendas;
@@ -43,6 +47,8 @@ public class PecaFragment   extends Fragment {
 
     public static ArrayList itens = null;
     private static String IDORDEM = Status_Ordem.IDORDEM;
+    
+    public static CheckBox selectAllCheckBox;
 
     JSONParser jsonParser = new JSONParser();
     private static String urlvenda = "http://futsexta.16mb.com/Proatec/Get_produtosemprestado.php";
@@ -70,11 +76,17 @@ public class PecaFragment   extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        vendasAdapter = new VendasAdapter(getContext(), lsvendas);
         //if (lsvendas != null && lsvendas.isEmpty()) {
        // }else {
             lsvendas = new ArrayList<>();
         //}
         new GetDadosVenda().execute();
+
+
+
+
     }
 
     private void createExampleList() {    }
@@ -105,14 +117,30 @@ public class PecaFragment   extends Fragment {
     v =  inflater.inflate(R.layout.fragment_peca,container,false);
     myrecyclerview = (RecyclerView) v.findViewById(R.id.recycleitemendas);
     VendasAdapter vendasAdapter  = new VendasAdapter(getContext(),lsvendas);
+    selectAllCheckBox = v.findViewById(R.id.selectAllCheckBox);
     myrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
     myrecyclerview.setAdapter(vendasAdapter);
 
     btnadd = (ImageButton) v.findViewById(R.id.itemadd);
     configureImageButton();
 
+        selectAllCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                VendasAdapter adapter = new VendasAdapter(getActivity(), lsvendas);
+
+                adapter.selectAllItems(isChecked, adapter);
+
+                myrecyclerview = (RecyclerView) v.findViewById(R.id.recycleitemendas);
+                VendasAdapter vendasAdapter  = new VendasAdapter(getContext(),lsvendas);
+                myrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+                myrecyclerview.setAdapter(vendasAdapter);
+            }
+
+        });
 
     return v;
+       
 
     }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.luiseduardo.infrafacil">
     <!-- package="com.example.luiseduardo.autocompletetextview"> -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -62,6 +63,29 @@
         <activity
             android:name="com.example.luiseduardo.infrafacil.MainActivity"
             android:label="Proatec Control - DashBoardd"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.luiseduardo.infrafacil.DadosLogin"
+            android:label="Proatec Control - Login"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true"
+            tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.luiseduardo.infrafacil.Login"
+            android:label="Proatec Control - Login"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="true">
             <intent-filter>

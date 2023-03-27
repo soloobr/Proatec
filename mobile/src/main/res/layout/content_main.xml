@@ -21,7 +21,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="#ddd">
 
             <LinearLayout
@@ -161,6 +161,10 @@
                                 android:layout_width="100dp"
                                 android:layout_height="200dp"
                                 android:layout_alignBaseline="@id/txchamados"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="47dp"
+                                android:layout_marginEnd="39dp"
                                 app:srcCompat="@drawable/checklist" />
 
                             <TextView
@@ -168,7 +172,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
-                                android:text="Controle"
+                                android:text="Controle de Ativo"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
 
@@ -204,7 +208,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
                                 android:gravity="center"
-                                android:text="Itens"
+                                android:text="Dispositivos"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
 
@@ -223,15 +227,29 @@
             </LinearLayout>
         </ScrollView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="Proatec Responsável:" />
+
+            <TextView
+                android:id="@+id/NomeProatec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text="TextView" />
+        </LinearLayout>
+
     </LinearLayout>
-
-
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </ListView>
 
 
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

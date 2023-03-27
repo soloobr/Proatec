@@ -101,12 +101,12 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="42dp">
+                    android:layout_height="50dp">
 
                     <TextView
                         android:id="@+id/lfone"
-                        android:layout_width="94dp"
-                        android:layout_height="36dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Professor:"
                         android:textAppearance="@style/TextAppearance.Compat.Notification"
@@ -114,14 +114,13 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <Spinner
-                        android:id="@+id/spinnertecnico"
-                        android:layout_width="0dp"
-                        android:layout_height="39dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                    <AutoCompleteTextView
+                        android:id="@+id/search_auto_complete_text"
+                        android:layout_width="324dp"
+                        android:layout_height="54dp"
+                        android:paddingLeft="10dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/lfone"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintStart_toEndOf="@+id/lfone" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
@@ -170,5 +169,12 @@
 
         </TableLayout>
     </LinearLayout>
+
+    <Spinner
+        android:id="@+id/search_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:spinnerMode="dropdown"
+        android:visibility="gone" />
 
 </LinearLayout>

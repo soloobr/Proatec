@@ -73,7 +73,7 @@ public class AdapterListViewHistoricoCli extends BaseAdapter {
         ((TextView) view.findViewById(R.id.numero)).setText(item.getId());
         //((TextView) view.findViewById(R.id.lchamado)).setText("Nº Produto:");
 
-        ((ImageView) view.findViewById(R.id._imagem_ocor)).setImageResource(item.getIconeRid());
+        //((ImageView) view.findViewById(R.id._imagem_ocor)).setImageResource(item.getIconeRid());
 
         return view;
     }
