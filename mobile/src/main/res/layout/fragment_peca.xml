@@ -26,7 +26,7 @@
                 android:text="Selecionar Todos" />
 
             <ImageButton
-                android:id="@+id/itemadd2"
+                android:id="@+id/btnsaida"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -34,12 +34,11 @@
                 android:src="@mipmap/boxout" />
 
             <ImageButton
-                android:id="@+id/itemadd"
+                android:id="@+id/btnentrada"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:contentDescription="Adicionar"
-                android:src="@mipmap/addprod32"
-                android:text="OK" />
+                android:src="@mipmap/boxin48" />
 
         </LinearLayout>
 

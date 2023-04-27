@@ -9,7 +9,7 @@
         android:id="@+id/_imagem_prod"
         android:layout_width="72dp"
         android:layout_height="match_parent"
-        app:srcCompat="@mipmap/trabalho100" />
+        app:srcCompat="@mipmap/laptop48" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingLeft="5dp"
-                android:text="Disponivél:"
+                android:text="Nº Srie:"
                 android:textSize="18sp" />
 
             <TextView
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
-                android:text="Nº Produto:"
+                android:text="ID Dispositivo:"
                 android:textColor="@color/colorAccent"
                 android:textSize="18sp" />
 
@@ -83,7 +83,8 @@
                 android:gravity="center_horizontal|center_vertical"
                 android:text="R$ 000,00"
                 android:textColor="@color/green_dark"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:visibility="invisible" />
         </LinearLayout>
 
     </LinearLayout>

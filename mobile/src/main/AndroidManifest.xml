@@ -121,7 +121,7 @@
         </activity>
         <activity
             android:name="com.example.luiseduardo.infrafacil.Clientes"
-            android:label="Proatec - Clientes."
+            android:label="Proatec - Professores."
             android:windowSoftInputMode="stateHidden"
             android:exported="true">
             <intent-filter>

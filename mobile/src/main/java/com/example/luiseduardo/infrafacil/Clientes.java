@@ -154,7 +154,12 @@ public class Clientes extends AppCompatActivity implements AdapterView.OnItemCli
 
                 OcorList.clear();
                 //adapterListView.notifyDataSetChanged();
-                Nomecli = searchView.getQuery().toString();
+                if(searchView.getQuery().toString() == ""){
+                    Nomecli = "%%";
+                }else {
+                    Nomecli = searchView.getQuery().toString();
+                }
+
 
                 new Clientes.GetDadosClientes().execute();
 
@@ -164,7 +169,18 @@ public class Clientes extends AppCompatActivity implements AdapterView.OnItemCli
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                //    adapter.getFilter().filter(newText);
+                OcorList.clear();
+                //adapterListView.notifyDataSetChanged();
+                if(searchView.getQuery().toString() == ""){
+                    Nomecli = "%%";
+                }else {
+                    Nomecli = searchView.getQuery().toString();
+                }
+
+
+                new Clientes.GetDadosClientes().execute();
+
+
                 return false;
             }
         });

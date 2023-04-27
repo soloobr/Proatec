@@ -78,7 +78,8 @@ public class Cadastro_Clientes extends AppCompatActivity implements AdapterView.
     EditText  editPhonecli, editEmailcli;
     AutoCompleteTextView mTxtNome;
 
-    private static String GETINFO_URL = "http://futsexta.16mb.com/Proatec/insert_clienteMobile.php";
+    private static String GETINFO_URL = "http://futsexta.16mb.com/Proatec/insert_ProfessorMobile.php";
+    private static String UPDATEDADOS_URL = "http://futsexta.16mb.com/Proatec/update_ProfessorMobile.php";
     private static String url = "http://futsexta.16mb.com/Poker/Infra_Get_ordem_servicomobilecliente.php";
     private String contador, tvaltebtcancel;
 
@@ -101,6 +102,7 @@ public class Cadastro_Clientes extends AppCompatActivity implements AdapterView.
     private static String ID = "";
     private  static  TextView textViewNumCli;
 
+    private static boolean Editando = false;
 
     private static String USERNAME = NewOrdem.USERNAME;
     private static String IDUSER = null;
@@ -153,13 +155,13 @@ public class Cadastro_Clientes extends AppCompatActivity implements AdapterView.
             public void onClick(View v) {
                 if (switchstatus.isChecked() == true) {
                     switchstatus.setChecked(true);
-                    switchstatus.setText("Cliente Ativo");
+                    switchstatus.setText("Professor Ativo");
                     ATIVO = "Ativo";
                    // Toast.makeText(Cadastro_Clientes.this, "Is checked? "+switchstatus.isChecked(), Toast.LENGTH_SHORT).show();
                 }
                 if (switchstatus.isChecked() == false) {
                     switchstatus.setChecked(false);
-                    switchstatus.setText("Cliente Inativo");
+                    switchstatus.setText("Professor Inativo");
                     ATIVO = "Inativo";
                    // Toast.makeText(Cadastro_Clientes.this, "Is checked? "+switchstatus.isChecked(), Toast.LENGTH_SHORT).show();
                 }
@@ -245,6 +247,7 @@ public class Cadastro_Clientes extends AppCompatActivity implements AdapterView.
             String s =(String) b.get("STRING_STATUS");
             String a =(String) b.get("STRING_ATIVO");
 
+            Editando = true;
 
             tvalte = (TextView) findViewById(R.id.TextView000);
             tvalte.setText(s);
@@ -261,10 +264,10 @@ public class Cadastro_Clientes extends AppCompatActivity implements AdapterView.
             if (a.equals("Ativo")){
 
                 switchstatus.setChecked(true);
-                switchstatus.setText("Cliente Ativo");
+                switchstatus.setText("Professor Ativo");
             }else{
                 switchstatus.setChecked(false);
-                switchstatus.setText("Cliente Inativo");
+                switchstatus.setText("Professor Inativo");
             }
 
             //editNome = (EditText) findViewById(R.id.editNome);
@@ -524,9 +527,14 @@ public class Cadastro_Clientes extends AppCompatActivity implements AdapterView.
                     break;
                 }
                 else {
-
-                    new InsertDados().execute();
-                    break;
+                    if (Editando == true){
+                        new UpdateDados().execute();
+                        Editando = false;
+                        break;
+                    }else {
+                        new InsertDados().execute();
+                        break;
+                    }
 
 
                 }
@@ -558,7 +566,7 @@ public class Cadastro_Clientes extends AppCompatActivity implements AdapterView.
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(Cadastro_Clientes.this);
-            pDialog.setMessage("Registrando Cliente");
+            pDialog.setMessage("Cadastrando Professor");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
@@ -602,6 +610,92 @@ public class Cadastro_Clientes extends AppCompatActivity implements AdapterView.
 
                 // getting product details by making HTTP request
                 JSONObject json = jsonParser.makeHttpRequest(GETINFO_URL, "POST",
+                        params);
+
+
+                // json success tag
+                success = json.getInt(TAG_SUCCESS);
+                if (success == 1) {
+                    Log.d("successo!", json.toString());
+                    finish();
+                    return json.getString(TAG_MESSAGE);
+
+                } else {
+                    Log.d("O Cadastro Ja existe!", json.getString(TAG_MESSAGE));
+                    //finish();
+                    return json.getString(TAG_MESSAGE);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+
+        }
+
+
+        protected void onPostExecute(String file_url) {
+            // dismiss the dialog once product deleted
+            pDialog.dismiss();
+            if (file_url != null) {
+                Toast.makeText(Cadastro_Clientes.this, file_url, Toast.LENGTH_LONG).show();
+            }
+
+        }
+
+
+    }
+    class UpdateDados extends AsyncTask<String, String, String> {
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(Cadastro_Clientes.this);
+            pDialog.setMessage("Atualizando Professor");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+        }
+
+        @Override
+        protected String doInBackground(String... args) {
+
+
+            String nome = ((AutoCompleteTextView) findViewById(R.id.autoeditNome)).getText().toString();
+            String telefone = ((EditText) findViewById(R.id.editPhonecli)).getText().toString();
+            String email = ((EditText) findViewById(R.id.editEmailcadcli)).getText().toString();
+
+
+            if (nome != null) {
+
+                NOME = ((AutoCompleteTextView) findViewById(R.id.autoeditNome)).getText().toString();
+                TELEFONE = ((EditText) findViewById(R.id.editPhonecli)).getText().toString();
+                EMAIL = ((EditText) findViewById(R.id.editEmailcadcli)).getText().toString();
+                ID = IDUSER;
+                if (ATIVO == null){
+                    ATIVO = "Ativo";
+                }
+
+            } else {
+
+                Log.d("Não", "Nome não preenchido");
+            }
+
+            int success;
+            try {
+                // Building Parameters
+                List params = new ArrayList();
+                params.add(new BasicNameValuePair("id", ID));
+                params.add(new BasicNameValuePair("nome", NOME));
+                params.add(new BasicNameValuePair("email", EMAIL));
+                params.add(new BasicNameValuePair("telefone", TELEFONE));
+                params.add(new BasicNameValuePair("status", ATIVO));
+
+                Log.d("request!", "starting");
+
+                // getting product details by making HTTP request
+                JSONObject json = jsonParser.makeHttpRequest(UPDATEDADOS_URL, "POST",
                         params);
 
 
@@ -782,7 +876,7 @@ public class Cadastro_Clientes extends AppCompatActivity implements AdapterView.
                 OcorList.clear();
                 itens = new ArrayList<ItemListView>();
                 newItemlist.clear();
-                ItemListView item7 = new ItemListView("0", "Cliente não possue Chamados", "0","0","0", android.R.drawable.presence_busy);
+                ItemListView item7 = new ItemListView("0", "Professor não possue Chamados", "0","0","0", android.R.drawable.presence_busy);
                 itens.add(item7);
                 adapterListView = new AdapterListViewHistoricoCli(Cadastro_Clientes.this, itens);
                 lv.setAdapter(adapterListView);

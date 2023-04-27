@@ -3,6 +3,7 @@ package com.example.luiseduardo.infrafacil;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,12 +29,12 @@ public class ClientesAdapter extends RecyclerView.Adapter<ClientesAdapter.MyViwe
 
     Context mContext;
     List<ItemListViewClientes> mData;
-    private static String urdesativa = "http://futsexta.16mb.com/Poker/Infra_Desativa_cliente.php";
+    private static String urdesativa = "http://futsexta.16mb.com/Proatec/Infra_Desativa_cliente.php";
     JSONParser jsonParser = new JSONParser();
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
 
-
+    private static String idselectec = "";
     public ClientesAdapter(Context mContext, List<ItemListViewClientes> mData) {
         this.mContext = mContext;
         this.mData = mData;
@@ -55,10 +56,16 @@ public class ClientesAdapter extends RecyclerView.Adapter<ClientesAdapter.MyViwe
     @Override
     public void onBindViewHolder(final MyViwerHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.tv_nome.setText(mData.get(position).getNome());
+        holder.ativo = (mData.get(position).getStatus());
+        String statuss = (mData.get(position).getStatus());
+        if(statuss.equals("Inativo")) {
+            holder.tv_nome.setTextColor(Color.RED);
+        }
+
         holder.tv_id.setText(mData.get(position).getId());
         holder.fone = (mData.get(position).getTelefone());
         holder.mail = (mData.get(position).getEmail());
-        holder.ativo = (mData.get(position).getStatus());
+
 
 
         //holder.img.setImageResource(mData.get(position).ge());
@@ -68,7 +75,7 @@ public class ClientesAdapter extends RecyclerView.Adapter<ClientesAdapter.MyViwe
 
                 new DesativaCliente().execute();
                 Toast.makeText(mContext, "O Cliente: "+holder.tv_nome.getText()+" Foi Desativado", Toast.LENGTH_SHORT).show();
-
+                idselectec = String.valueOf(holder.tv_id.getText());
                 removeAt(position);
             }
         });
@@ -82,7 +89,7 @@ public class ClientesAdapter extends RecyclerView.Adapter<ClientesAdapter.MyViwe
                 i.putExtra("STRING_NOME", holder.tv_nome.getText());
                 i.putExtra("STRING_FONE", holder.fone);
                 i.putExtra("STRING_MAIL", holder.mail);
-                i.putExtra("STRING_STATUS","EDITANDO DADOS CLIENTE");
+                i.putExtra("STRING_STATUS","EDITANDO DADOS PROFESSOR");
                 i.putExtra("STRING_ATIVO",holder.ativo);
                 mContext.startActivity(i);
                 //Toast.makeText(mContext, holder.tv_id.getText(), Toast.LENGTH_SHORT).show();
@@ -148,22 +155,22 @@ public class ClientesAdapter extends RecyclerView.Adapter<ClientesAdapter.MyViwe
          protected String doInBackground(String... strings) {
              int success;
              try {
-            String idcliente = Clientes.idcliente;
+            //String idcliente = Clientes.idcliente;
 
              List params = new ArrayList();
-             params.add(new BasicNameValuePair("Idcliente",idcliente));
+             params.add(new BasicNameValuePair("Idcliente",idselectec));
 
 
              JSONObject newjson = jsonParser.makeHttpRequest(urdesativa,"POST",
                      params);
                  success = newjson.getInt(TAG_SUCCESS);
                  if (success == 1) {
-                     Log.d("Cliente desativado!", newjson.toString());
+                     Log.d("Professor desativado!", newjson.toString());
 
                      return newjson.getString(TAG_MESSAGE);
 
                  } else {
-                     Log.d("Cliente não encontrado", newjson.getString(TAG_MESSAGE));
+                     Log.d("Professor não encontrado", newjson.getString(TAG_MESSAGE));
 
                      return newjson.getString(TAG_MESSAGE);
                  }

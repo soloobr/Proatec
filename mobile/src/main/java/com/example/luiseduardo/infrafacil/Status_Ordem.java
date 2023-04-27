@@ -495,7 +495,7 @@ public class Status_Ordem extends AppCompatActivity implements AdapterView.OnIte
 //                    btnDatePicker.setEnabled(true);
                     btnedit.setText("SALVAR");
                     editServRealizado.setEnabled(true);
-                    PecaFragment.btnadd.setEnabled(true);
+                    PecaFragment.btnsaida.setEnabled(true);
                     PecaFragment.myrecyclerview.setEnabled(true);
                     btnfinaliza.setText("CANCELAR");
                     btnfinaliza.setEnabled(true);
@@ -775,7 +775,7 @@ public class Status_Ordem extends AppCompatActivity implements AdapterView.OnIte
             }
             editServRealizado.setText(neditObs);
             //ServicoFragment.editServRealizado2.setEnabled(false);
-            PecaFragment.btnadd.setEnabled(false);
+            PecaFragment.btnsaida.setEnabled(false);
             PecaFragment.myrecyclerview.setEnabled(false);
 
             //---editTec.setText(neditTec);

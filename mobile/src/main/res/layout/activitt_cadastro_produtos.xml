@@ -43,7 +43,7 @@
                     android:background="@android:color/white"
                     android:gravity="center_vertical|center_horizontal"
                     android:padding="18dip"
-                    android:text="CADASTRO DE PRODUTOS"
+                    android:text="CADASTRO DE DISPOSITIVOS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:textColor="@android:color/holo_green_light" />
 
@@ -60,7 +60,7 @@
 
                     android:background="@android:color/background_light"
                     android:gravity="center"
-                    android:text="Produto Nº"
+                    android:text="Dispositivo Nº"
 
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -112,7 +112,7 @@
                     android:gravity="fill_vertical"
                     android:paddingLeft="3dp"
                     android:paddingTop="5dp"
-                    android:text="Descrição do Produto:" />
+                    android:text="Descrição do Dispositivo:" />
 
                 <EditText
                     android:id="@+id/editnomeprod"
@@ -136,14 +136,14 @@
                     android:layout_gravity="center|center_vertical"
                     android:gravity="center_vertical"
                     android:paddingLeft="3dp"
-                    android:text="Quantidade:" />
+                    android:text="Numero de Série:" />
 
                 <EditText
-                    android:id="@+id/editquantidadenew"
+                    android:id="@+id/editserie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="text" />
 
             </LinearLayout>
 
@@ -160,14 +160,14 @@
                     android:layout_gravity="center|center_vertical"
                     android:gravity="center_vertical"
                     android:paddingLeft="3dp"
-                    android:text="Id forncedor:" />
+                    android:text="Modelo:" />
 
                 <EditText
-                    android:id="@+id/editidfornecedor"
+                    android:id="@+id/editmodelo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="text" />
 
             </LinearLayout>
 
@@ -184,14 +184,16 @@
                     android:layout_gravity="center|center_vertical"
                     android:gravity="center_vertical"
                     android:paddingLeft="3dp"
-                    android:text="Valor:" />
+                    android:text="Valor:"
+                    android:visibility="invisible" />
 
                 <EditText
                     android:id="@+id/edtvalorproduto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:visibility="invisible" />
 
             </LinearLayout>
 
@@ -205,12 +207,12 @@
                     android:id="@+id/switchstatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
+                    android:checked="false"
                     android:clickable="true"
                     android:padding="5dp"
                     android:paddingEnd="20dp"
                     android:paddingBottom="20dp"
-                    android:text="Produto Ativo"
+                    android:text="Dispositivo Ativo"
                     android:textOff="OFF"
                     android:textOn="ON" />
 

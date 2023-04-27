@@ -38,6 +38,7 @@ import java.util.List;
 import static com.example.luiseduardo.infrafacil.JSONParser.json;
 import static com.example.luiseduardo.infrafacil.PecaFragment.Somavebdas;
 import static com.example.luiseduardo.infrafacil.PecaFragment.lsvendas;
+import static com.example.luiseduardo.infrafacil.R.id.editmodelo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -155,66 +156,28 @@ private static String urlFornecedor = "http://futsexta.16mb.com/Poker/Infra_Get_
 
                 LayoutInflater inflater = getLayoutInflater();
                 View alertLayout = inflater.inflate(R.layout.custom_alertprod, null);
-                final View alertLayoutparce = inflater.inflate(R.layout.custom_alertparcelamento, null);
-                final View alertLayoutitemparce = inflater.inflate(R.layout.custom_alertatualizaitem, null);
-                final EditText qtd = alertLayout.findViewById(R.id.edtquantidade);
-                //final EditText idfornecedor = alertLayout.findViewById(R.id.edtidforne);
-                final Spinner spinnerfornecedor = alertLayout.findViewById(R.id.spinnerfornecedor);
+                //final View alertLayoutparce = inflater.inflate(R.layout.custom_alertparcelamento, null);
+                //final View alertLayoutitemparce = inflater.inflate(R.layout.custom_alertatualizaitem, null);
+                //final EditText qtd = alertLayout.findViewById(R.id.edtquantidade);
 
-               // mAdapter = new AdapterSpinnerFornecedor(getApplicationContext(),mFornecedorList);
-               // spinnerfornecedor.setAdapter(mAdapter);
+                //final EditText valordevenda = alertLayout.findViewById(R.id.editvalorvendido);
+                //valordevenda.addTextChangedListener(new Status_Ordem.MoneyTextWatcher(valordevenda));
 
-                AdapterSpinnerFornecedor adapter = new AdapterSpinnerFornecedor(Produtos.this,
-                        R.layout.spinner_fornecedor_layout, R.id.spinnerdescricao, mFornecedorList);
-                spinnerfornecedor.setAdapter(adapter);
-
-                spinnerfornecedor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        //first,  we have to retrieve the item position as a string
-                        // then, we can change string value into integer
-                        String item_position = String.valueOf(position);
-
-                        //int positonInt = Integer.valueOf();
-                         idf = spinnerfornecedor.getSelectedItem().toString();
-
-                        //Toast.makeText(Produtos.this, "value is "+ idf, Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-                });
-
-                //String idfornecedor = spinnerfornecedor.getPositionForView()
-
-                // spinnerfornecedor.setAdapter(aa);
-                //spinnerfornecedor.setSelection(0);
-
-
-
-
-                final EditText valordevenda = alertLayout.findViewById(R.id.editvalorvendido);
-                valordevenda.addTextChangedListener(new Status_Ordem.MoneyTextWatcher(valordevenda));
-
-                final EditText valordecompra = alertLayout.findViewById(R.id.editvalorpago);
-                valordecompra.addTextChangedListener(new Status_Ordem.MoneyTextWatcher(valordecompra));
+               // final EditText valordecompra = alertLayout.findViewById(R.id.editvalorpago);
+               // valordecompra.addTextChangedListener(new Status_Ordem.MoneyTextWatcher(valordecompra));
 
                 final TextView tvdescriproduto = alertLayout.findViewById(R.id.tvdescriproduto);
                 final TextView txnumeroid = alertLayout.findViewById(R.id.txnumeroid);
-                final RadioButton buttonavista = alertLayout.findViewById(R.id.radioButtonAvista);
+                final TextView txserie = alertLayout.findViewById(R.id.editserie);
+                final TextView txmodelo = alertLayout.findViewById(editmodelo);
 
                 tvdescriproduto.setText(descri);
                 txnumeroid.setText(idprod);
-                valordevenda.setText(valoruni);
-                valordecompra.setText(valorpago);
-                qtd.setText("1");
-                //idfornecedor.setText("1");
-
+                //txserie.setText();
+                //txmodelo.setText(valorpago);
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(Produtos.this);
-                alert.setTitle("Adicionar item");
+                alert.setTitle("Adicionar Dispositivo");
                 alert.setView(alertLayout);
                 alert.setCancelable(false);
 
@@ -231,20 +194,20 @@ private static String urlFornecedor = "http://futsexta.16mb.com/Poker/Infra_Get_
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         idforne = idf;//idfornecedor.getText().toString();
-                        valoruni = valordevenda.getText().toString();
+                        //valoruni = valordevenda.getText().toString();
                         String Vlr_Pexaold = String.format("[%s\\s]", Status_Ordem.MoneyTextWatcher.getCurrencySymbol());
                         valoruni = valoruni.replaceAll(Vlr_Pexaold, "");
                         valoruni = valoruni.replaceAll(",", "");
                         valoruni = valoruni.replaceAll("[.]", "");
 
-                        valorpago = valordecompra.getText().toString();
+                        //valorpago = valordecompra.getText().toString();
                         String Vlr_pagoold = String.format("[%s\\s]", Status_Ordem.MoneyTextWatcher.getCurrencySymbol());
                         valorpago = valorpago.replaceAll(Vlr_pagoold, "");
                         valorpago = valorpago.replaceAll(",", "");
                         valorpago = valorpago.replaceAll("[.]", "");
 
 
-                        qtdprodvend = qtd.getText().toString();
+                        //qtdprodvend = qtd.getText().toString();
                         //idcliente = Status_Ordem.idcliente;
                         datavenda = Status_Ordem.dataprev;
                         formadepagamento = "Avista - Dinheiro";
@@ -278,9 +241,9 @@ private static String urlFornecedor = "http://futsexta.16mb.com/Poker/Infra_Get_
 
                                     if (positiondel == -1) {
 
-                                        final TextView tvdescriproduto = alertLayoutitemparce.findViewById(R.id.tvdescriproduto);
-                                        final EditText qtd = alertLayoutitemparce.findViewById(R.id.edtquantidade);
-                                        final EditText addqtd = alertLayoutitemparce.findViewById(R.id.addedtquantidade);
+                                       // final TextView tvdescriproduto = alertLayoutitemparce.findViewById(R.id.tvdescriproduto);
+                                       // final EditText qtd = alertLayoutitemparce.findViewById(R.id.edtquantidade);
+                                       // final EditText addqtd = alertLayoutitemparce.findViewById(R.id.addedtquantidade);
 
 
                                         tvdescriproduto.setText(descri);
@@ -291,7 +254,7 @@ private static String urlFornecedor = "http://futsexta.16mb.com/Poker/Infra_Get_
 
                                         AlertDialog.Builder alertt = new AlertDialog.Builder(Produtos.this);
                                         alertt.setTitle("Item Encontrado na Lista:");
-                                        alertt.setView(alertLayoutitemparce);
+                                        //alertt.setView(alertLayoutitemparce);
                                         alertt.setCancelable(false);
 
                                         alertt.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -309,10 +272,10 @@ private static String urlFornecedor = "http://futsexta.16mb.com/Poker/Infra_Get_
 
                                                 int qtdvendalast = Integer.parseInt(qtdvendalaste);
                                                 //int qtdvendasnow = Integer.parseInt(qtdprodvend);
-                                                int qtdvendasnow = Integer.parseInt(addqtd.getText().toString());
+                                                //int qtdvendasnow = Integer.parseInt(addqtd.getText().toString());
 
-                                                int somaqtd = (qtdvendalast + qtdvendasnow);
-                                                somaqtdnew = String.valueOf(somaqtd);
+                                                //int somaqtd = (qtdvendalast + qtdvendasnow);
+                                                //somaqtdnew = String.valueOf(somaqtd);
                                                 qtdprodvend = somaqtdnew;
 
                                                 int iqtd = Integer.parseInt(qtdprodvend);
@@ -338,7 +301,7 @@ private static String urlFornecedor = "http://futsexta.16mb.com/Poker/Infra_Get_
 
                                         AlertDialog.Builder alertt = new AlertDialog.Builder(Produtos.this);
                                         alertt.setTitle("Item Parcelado encontrado");
-                                        alertt.setView(alertLayoutparce);
+                                        //alertt.setView(alertLayoutparce);
                                         alertt.setCancelable(false);
 
                                         alertt.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -586,7 +549,7 @@ private static String urlFornecedor = "http://futsexta.16mb.com/Poker/Infra_Get_
                         map.put("numero","1");
                         newItemlist.add(map);
 
-                        ItemListViewPecas item1 = new ItemListViewPecas(descri,modelo,id, serie, status, R.mipmap.trabalho100);
+                        ItemListViewPecas item1 = new ItemListViewPecas(descri,modelo,id, serie, status, R.mipmap.laptop48);
                         itens.add(item1);
 
                         HashMap<String, String> contact = new HashMap<>();

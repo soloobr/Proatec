@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,11 +16,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
@@ -43,7 +41,7 @@ public class PecaFragment   extends Fragment {
     static View v;
     public static RecyclerView myrecyclerview;
     public static List<Vendas> lsvendas;
-    public static ImageButton btnadd;
+    public static ImageButton btnentrada,btnsaida;
 
     public static ArrayList itens = null;
     private static String IDORDEM = Status_Ordem.IDORDEM;
@@ -121,7 +119,8 @@ public class PecaFragment   extends Fragment {
     myrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
     myrecyclerview.setAdapter(vendasAdapter);
 
-    btnadd = (ImageButton) v.findViewById(R.id.itemadd);
+    btnentrada = (ImageButton) v.findViewById(R.id.btnentrada);
+    btnsaida = (ImageButton) v.findViewById(R.id.btnsaida);
     configureImageButton();
 
         selectAllCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -243,9 +242,20 @@ public class PecaFragment   extends Fragment {
 
     private void configureImageButton() {
         // TODO Auto-generated method stub
-        ImageButton btn = (ImageButton) v.findViewById(R.id.itemadd);
+        ImageButton btn = (ImageButton) v.findViewById(R.id.btnentrada);
+        ImageButton btnsaida = (ImageButton) v.findViewById(R.id.btnsaida);
 
         btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(getActivity(), Produtos.class);
+                //startActivity(intent);
+                Toast.makeText(getActivity(), "Selecione um Dispositivo para baixar!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+        btnsaida.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
