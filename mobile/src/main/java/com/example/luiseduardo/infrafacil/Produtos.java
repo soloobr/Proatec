@@ -454,7 +454,13 @@ private static String urlFornecedor = "http://futsexta.16mb.com/Poker/Infra_Get_
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                //    adapter.getFilter().filter(newText);
+                OcorList.clear();
+                //adapterListView.notifyDataSetChanged();
+                DescriProd = searchView.getQuery().toString();
+
+                new GetDados1().execute();
+
+
                 return false;
             }
         });
